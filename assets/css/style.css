@@ -7,3 +7,7 @@
     width: 50;
     height: 50;
 }
+
+.header_ul {
+    display: flex;
+}
