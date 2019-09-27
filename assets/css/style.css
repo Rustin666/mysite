@@ -234,6 +234,7 @@ input {outline:none;}
 .drop_menu a {
     color: white;
 }
+<<<<<<< HEAD
 .blockvideo{
     display: flex;
     justify-content: center ;
@@ -254,3 +255,5 @@ input {outline:none;}
     display: block;
     
 }
+=======
+>>>>>>> e16ab9cc075c305e78e3880927152965601c7f49
