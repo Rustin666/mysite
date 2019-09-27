@@ -1,29 +1,45 @@
 $(document).ready( function() {
-    closeRegistration()
+    headerBG();
 });
 
-function openRegistration() {
-    var templateText = function(){/*
-        <div class="reg_block">
-            <div class="reg_block_bg" onclick="closeRegistration()"></div>
-            <div class="reg_block_body">
-                <div class="reg_block_body_block_inputs">
-                    <h1>Регистрация</h1>
-                    <form action="/" method="post">
-                        <input type="text" placeholder="Login">
-                        <input type="text" placeholder="email">
-                        <input type="password" placeholder="password">
-                        <input type="password" placeholder="password again">
-                        <button type="button">REGISTRATION</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        */}.toString().slice(15,-3);
-    $('body').append(templateText);
-    $('.reg_block').fadeIn('slow');
+function headerBG() {
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 1) {
+            $('.landing_header_categories_ul').fadeOut();
+        }
+        else {
+            $('.landing_header_categories_ul').fadeIn();
+        }
+    });
 }
 
-function closeRegistration() {
-    $('.reg_block').fadeOut('slow');
+var dropMenuNum = 0;
+
+function openDropMenu() {
+
+    if(dropMenuNum == 0) {
+        $('.drop_menu').slideDown('fast');
+        $('.header_search_menu').addClass('selectedMenu');
+        dropMenuNum = dropMenuNum + 1;
+    } else {
+        $('.drop_menu').slideUp('fast');
+        $('.header_search_menu').removeClass('selectedMenu');
+        dropMenuNum = 0;
+    }
+
 }
+
+var searchBlock = 0;
+
+function openSearchBlock() {
+    if(searchBlock == 0) {
+        $('.landing_header_search_div_search').css("width", "225px");
+        $('.search_input').fadeIn('slow');
+        searchBlock = searchBlock + 1;
+    } else {
+        $('.landing_header_search_div_search').css("width", "25px");
+        $('.search_input').fadeOut();
+        searchBlock = 0;
+    }
+}
+
