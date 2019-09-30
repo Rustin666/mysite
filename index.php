@@ -1,3 +1,10 @@
+<?php
+
+    require_once "videos/fun.php";
+    require_once "videos/db.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -60,7 +67,48 @@
     </div>
 
     <div class="landing_second_page">
+        <div class="blocks_video">
+            <div class="blocks_video_content">
+                <?
 
+                $sql = "SELECT * FROM `fp`.`videos`";
+                $result = mysqli_query($link, $sql);
+                $rows = mysqli_num_rows($result);
+
+
+    
+
+                for ($i = 0 ; $i < $rows ; ++$i)
+                {
+                    $row = mysqli_fetch_row($result);
+
+                    echo '
+                    
+                        
+                                <div class="video_block" id="'.$row[1].'">
+                                    <div class="video_block_name">
+                                        <span>'.$row[4].'</span>
+                                    </div>
+                                    <div class="video_block_over_flow_img">
+                                        <img src="'.$row[3].'">
+                                    </div>
+                                    <div class="video_block_info">
+                                        <div class="video_block_likes">
+                                            <span>'.$row[5].'</span>
+                                        </div>
+                                        <div class="video_block_eyes">
+                                            <span>'.$row[6].'</span>
+                                        </div>
+                                    </div>
+                                    <div class="video_block_play">
+                                        <img src="assets/css/img/play-button.png">
+                                    </div>
+                                </div>
+                    ';
+                }
+                ?>
+            </div>
+        </div>
     </div>
     
     
@@ -74,26 +122,15 @@
 
 
 
-<<<<<<< HEAD
 
     <script src="assets/jquery/jquery-3.4.1.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/index.js"></script>
 
     
-    
-    <div class="blockvideo">
-        <div class="xuy">
-            <div class="chlen">
-            </div>
-        </div>
-        </div>
-    </div>
 
 
 
-=======
->>>>>>> e16ab9cc075c305e78e3880927152965601c7f49
 
 </body>
 </html>

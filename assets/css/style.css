@@ -32,6 +32,7 @@ input {outline:none;}
     align-items: center;
     position: fixed;
     transition: all .5s;
+    z-index: 9999;
 }
 
 .landing_header_div {
@@ -207,7 +208,7 @@ input {outline:none;}
     height: 300px;
     top: 50px;
     right: 0;
-    border: 2px solid #1F1F1F;
+    border: 2px solid #282828;
     border-right: 1px solid #FF6B4D;
     display: none;
     text-align: center;
@@ -234,26 +235,108 @@ input {outline:none;}
 .drop_menu a {
     color: white;
 }
-<<<<<<< HEAD
-.blockvideo{
+
+.blocks_video{
     display: flex;
     justify-content: center ;
 }
-.xuy{
+
+.blocks_video_content{
     width: 80%;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; 
+    padding-top: 100px;
 }
-.chlen{
+
+.video_block{
     width: 300px;
     height: 200px;
-    background-color: white;
-    margin-left: 20px;
-    margin-bottom: 20px;
     display: block;
-    
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-=======
->>>>>>> e16ab9cc075c305e78e3880927152965601c7f49
+
+.video_block_over_flow_img img {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.video_block_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+}
+
+.video_block_likes,
+.video_block_eyes {
+    width: auto;
+    background-repeat: no-repeat;
+    color: #ffffffcc;
+    padding-left: 25px;
+    line-height: 1;
+}
+
+.video_block_likes {
+    background-image: url(img/like.png);
+    position: absolute;
+    left: 25px;
+}
+
+.video_block_eyes {
+    background-image: url(img/view.png);
+    position: absolute;
+    right: 25px;
+}
+
+.video_block_play {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all .2s;
+}
+
+.video_block_play:hover {
+    opacity: 1;
+}
+
+.video_block_play img {
+    width: 50px;
+    height: 50px;
+}
+
+.video_block_name {
+    position: absolute;
+    left: 14px;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+}
+
+.video_block_name span{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
